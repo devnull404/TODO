@@ -22,10 +22,16 @@ main
 
 main
     article
+        border: 1px solid rgb(198, 212, 212)
+        border-radius: 10px 10px 0 0
+        margin: 30px 0 0 0
+        width: 70vw
+        height: 90vh
+        @media ( max-width: 600px  )
+            width: 90vw
         div#myapp
             padding: 10px
             display: flex
-            margin: 30px 0 0 0
             background-color: whitesmoke
             border-radius: 10px
             height: 50px
@@ -33,6 +39,7 @@ main
             button
                 padding: 10px 5px 10px 5px
                 border-radius: 0 7px 7px 0
+                background-color: rgb(100, 200, 100)
             input
                 padding: 10px 5px 10px 5px
                 border-radius: 7px 0 0 7px
