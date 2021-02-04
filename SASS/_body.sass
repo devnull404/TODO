@@ -4,13 +4,15 @@
 section.infoBubble
     display: flex
     max-width: 60vw
-    box-shadow: 5px 5px 10px 0 gray
     border-radius: 10px
     padding: 10px
     background-color: whitesmoke
     flex-direction: column
+    transition: all 0.6s ease
     @media ( max-width: 500px )
         max-width: 80vw
+section.infoBubble:hover
+    box-shadow: 5px 5px 10px 0 gray
 
 
 main
