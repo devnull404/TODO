@@ -14,6 +14,18 @@ header nav {
   height: 70px;
   padding: 3px 10px 0 10px;
 }
+header nav a {
+  text-decoration: none;
+  padding: 10px;
+  color: black;
+  border: 1px solid black;
+  border-radius: 4px;
+  transition: 0.4s all ease;
+}
+header nav a:hover {
+  background-color: gray;
+  color: white;
+}
 header nav img {
   height: inherit;
 }
@@ -50,14 +62,6 @@ main {
   margin: 0;
   border-box: box-sizing;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-}
-
-a {
-  text-decoration: none;
-  padding: 10px;
-  color: black;
-  border: 1px solid black;
-  border-radius: 4px;
 }
 
 /*# sourceMappingURL=main.css.map */
