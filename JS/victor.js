@@ -1,1 +1,1 @@
-let victor = 1;
+let victor = 0;
