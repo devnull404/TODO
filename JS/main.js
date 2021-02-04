@@ -9,3 +9,6 @@ function drawer() {
     let inProp = "rgb(" + red + ", " + green + ", " + blue + ")";
     document.getElementsByClassName("decorationBar")[1].style.backgroundColor = inProp;
 }
+
+document.getElementById("myapp").innerHTML += '<input type="text" placeholder="New task">'
+document.getElementById("myapp").innerHTML += '<button>add</button>'
