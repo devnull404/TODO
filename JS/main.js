@@ -1,13 +1,13 @@
 document.addEventListener("mousemove", function(e) {
-    drawer()
-})
+    drawer(e)
+});
 
-function drawer() {
-    let red = Math.floor(Math.random()*254).toString();
-    red = (10).toString()
-    let green = Math.floor(Math.random()*254).toString();
-    let blue = Math.floor(Math.random()*254).toString();
-    blue = (10).toString()
+function drawer(event) {
+    let viewW = window.innerWidth;
+    let viewH = window.innerHeight;
+    let red = (180).toString();
+    let green = ((event.offsetX/viewW)*254).toString();
+    let blue = ((event.offsetY/viewH)*254).toString();
     let inProp = "rgb(" + red + ", " + green + ", " + blue + ")";
     document.getElementsByClassName("decorationBar")[1].style.backgroundColor = inProp;
 }
