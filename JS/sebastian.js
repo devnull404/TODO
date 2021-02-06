@@ -122,14 +122,15 @@ let listTask = document.querySelector(".tareas");
 function displayTask(contend ,numberControl){
     let unlist = createNode("li", false, numberControl+"li", "elementList");
     let elementTask = createNode("p", contend, numberControl+"P");
-    let doneImg = createImg("../assets/img/clock.svg", "do", "iconDo");
+    let doneImg = createImg("/../assets/img/clock.svg", "do", "iconDo");
     doneImg.id = numberControl+"Img";
     doneImg.style = "display: inline-block;";
     //Parte para poner la tarea como completada: Se cambia el icono y el subrayado
     doneImg.onclick = function (){
         let elementList = numberControl+"P";
         let underlineLi = document.getElementById(elementList);
-        doneImg.src = "../assets/img/checkmark2.svg";
+        doneImg.src = "/../assets/img/checkmark2.svg";
+        doneImg.alt = "done"
         underlineLi.style.textDecoration = "line-through red";
     }
     unlist.appendChild(doneImg);
