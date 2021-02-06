@@ -62,6 +62,6 @@ var value;
     };
 
      //Guardar los tareas en la lista
-     btnSave.addEventListener('click', function() {
-        addTasks();
-       });
+btnSave.addEventListener('click', function() {
+    addTasks();
+    });
