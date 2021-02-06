@@ -12,5 +12,5 @@ function drawer(event) {
     document.getElementsByClassName("decorationBar")[1].style.backgroundColor = inProp;
 }
 
-document.getElementById("myapp").innerHTML += '<input type="text" placeholder="New task">'
-document.getElementById("myapp").innerHTML += '<button>add</button>'
+document.getElementById("app").innerHTML += '<input type="text" placeholder="New task">'
+document.getElementById("app").innerHTML += '<button>add</button>'
