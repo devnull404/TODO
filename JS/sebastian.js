@@ -100,9 +100,7 @@ buttonHiden.addEventListener("click", function() {
 */
 let data = [
 ];
-function displayData(){
-
-}
+appToDo.appendChild(createNode("h2", "ToDo app", false, "title"))
 //sección de 
 let taskAdd = createNode("section", false, "add");
 let taskAddInp = createNode("input", false, "taskAdd");
@@ -118,27 +116,49 @@ appToDo.appendChild(taskAdd);
 appToDo.appendChild(createNode("section", createNode("ul", false, false, "tareas"), "list"));
 let listTask = document.querySelector(".tareas");
 
-function displayTask(contend){
-    let unlist = createNode("li", false, false);
-    let elementTask = document.createElement("p");
-    elementTask.appendChild(document.createTextNode(contend));
+function displayTask(contend ,numberControl){
+    let unlist = createNode("li", false, numberControl+"li", "elementList");
+    let elementTask = createNode("p", contend, numberControl+"P");
+    let doneImg = createImg("../assets/img/clock.svg", "do", "iconDo");
+    doneImg.id = numberControl+"Img";
+    doneImg.style = "display: inline-block;";
+    doneImg.onclick = function (){
+        let elementList = numberControl+"P";
+        let underlineLi = document.getElementById(elementList);
+        doneImg.src = "../assets/img/checkmark2.svg";
+        underlineLi.style.textDecoration = "line-through red";
+        
+    }
+    unlist.appendChild(doneImg);
     unlist.appendChild(elementTask);
-    unlist.appendChild(createNode("button", "delet", false))
+    let buttonDelet = createNode("button", "delet", numberControl+"Button", "buttonDelet");
+    buttonDelet.onclick = function (){
+        let elementoDelet = numberControl+"li";
+        let deletChildLi = document.getElementById(elementoDelet);
+        listTask.removeChild(deletChildLi);
+    }
+    unlist.appendChild(buttonDelet)
     listTask.appendChild(unlist);
-    console.log(false);
 }
 
 let buttonAdd = document.getElementById("buttonAdd");
 var input = document.getElementById('taskAdd');
+let numberControl = 1;
 buttonAdd.onclick = function(){
     let calcio = input.value;
     input.value = "";
     if(calcio == ""){
-        windows.alert("Elemento vacio")
+        window.alert("Elemento vacio");
     } else{
-        displayTask(calcio);
+        displayTask(calcio, numberControl);
+        numberControl = numberControl + 1;
     }
 };
+
+//Funcion de borrrar
+function funcDelet(){
+    console.log(buttonDelet);
+}
 
 // taskAddInp.addEventListener("input", function(event) {
 //     data.push(event.target.value);
