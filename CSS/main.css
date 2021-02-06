@@ -89,6 +89,61 @@ main article div#myapp input {
   border-radius: 7px 0 0 7px;
 }
 
+#app {
+  width: 80%;
+  height: 100vh;
+  margin: 0 10%;
+}
+#app h2 {
+  text-align: center;
+  margin: 30px 0px;
+}
+
+#add {
+  margin: 50px 0px;
+  padding: 5px;
+  display: flex;
+  fex-direction: columns;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  border: 2px solid blue;
+  border-radius: 7px;
+}
+#add input, #add button {
+  border: 1px solid green;
+  border-radius: 10px;
+  font-size: 20px;
+  margin: 10px 0;
+}
+
+#list {
+  width: 100%;
+  border: 2px solid green;
+  border-radius: 10px;
+  height: 400px;
+  overflow: scroll;
+}
+
+.elementList {
+  display: flex;
+  margin: 10px 0px;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0;
+}
+
+@media (min-width: 601px) and (max-width: 992px) {
+  #app {
+    width: 60%;
+    margin: 0 20%;
+  }
+}
+@media (min-width: 993px) {
+  #app {
+    width: 40%;
+    margin: 0 30%;
+  }
+}
 * {
   border: 0;
   margin: 0px;

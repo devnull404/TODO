@@ -100,70 +100,66 @@ buttonHiden.addEventListener("click", function() {
 */
 let data = [
 ];
+//Añadiendo titulo de la aplicación
 appToDo.appendChild(createNode("h2", "ToDo app", false, "title"))
-//sección de 
+//sección de input y button
 let taskAdd = createNode("section", false, "add");
 let taskAddInp = createNode("input", false, "taskAdd");
 taskAddInp.type = "text";
 taskAddInp.placeholder = "task";
-taskAdd.appendChild(taskAddInp);
+taskAdd.appendChild(taskAddInp); //Se añadio el input
 
 //Añadiendo botonAdd
 taskAdd.appendChild(createNode("button", "Add", "buttonAdd"));
 appToDo.appendChild(taskAdd);
 
-//creando seccion de visualización de tareas.
+//Segunda sección: sección de lista de cosas
 appToDo.appendChild(createNode("section", createNode("ul", false, false, "tareas"), "list"));
+//Obteniendo la variable listTask para ocuparla para añadir las tareas
 let listTask = document.querySelector(".tareas");
 
+//Función que muestra las tareas
 function displayTask(contend ,numberControl){
     let unlist = createNode("li", false, numberControl+"li", "elementList");
     let elementTask = createNode("p", contend, numberControl+"P");
     let doneImg = createImg("../assets/img/clock.svg", "do", "iconDo");
     doneImg.id = numberControl+"Img";
     doneImg.style = "display: inline-block;";
+    //Parte para poner la tarea como completada: Se cambia el icono y el subrayado
     doneImg.onclick = function (){
         let elementList = numberControl+"P";
         let underlineLi = document.getElementById(elementList);
         doneImg.src = "../assets/img/checkmark2.svg";
         underlineLi.style.textDecoration = "line-through red";
-        
     }
     unlist.appendChild(doneImg);
     unlist.appendChild(elementTask);
     let buttonDelet = createNode("button", "delet", numberControl+"Button", "buttonDelet");
+    //funcion para borrar la tarea
     buttonDelet.onclick = function (){
         let elementoDelet = numberControl+"li";
         let deletChildLi = document.getElementById(elementoDelet);
         listTask.removeChild(deletChildLi);
     }
-    unlist.appendChild(buttonDelet)
-    listTask.appendChild(unlist);
+    unlist.appendChild(buttonDelet); //Añadiendo boton a elemento li
+    listTask.appendChild(unlist); //añadiendo elemento de la lista desordenada a lista desordenada 
 }
 
+//dando funcionalidad al boton de añadir
 let buttonAdd = document.getElementById("buttonAdd");
 var input = document.getElementById('taskAdd');
-let numberControl = 1;
+let numberControl = 1; // numero de control es unico para cada tarea nueva
 buttonAdd.onclick = function(){
-    let calcio = input.value;
+    let newTask = input.value;
     input.value = "";
-    if(calcio == ""){
+    if(newTask == ""){
         window.alert("Elemento vacio");
     } else{
-        displayTask(calcio, numberControl);
+        displayTask(newTask, numberControl);
         numberControl = numberControl + 1;
     }
 };
 
-//Funcion de borrrar
-function funcDelet(){
-    console.log(buttonDelet);
-}
-
-// taskAddInp.addEventListener("input", function(event) {
-//     data.push(event.target.value);
-//     console.log(event.target.value);
-// });
 
 
 
