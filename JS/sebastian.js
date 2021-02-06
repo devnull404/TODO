@@ -1,1 +1,1 @@
-let sebastian = 3;
+let sebastian = 0;
