@@ -65,12 +65,3 @@ var value;
      btnSave.addEventListener('click', function() {
         addTasks();
        });
-    
-    
-   
-    
-
-
-
-
-
