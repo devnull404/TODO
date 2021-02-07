@@ -173,7 +173,7 @@ function createTask(task) {
 function validateTask(taskText, actualTasks) {
     var tmpTasks = [...actualTasks];
     var taskExist = tmpTasks.some(task => {
-        return task.querySelector("p").textContent.replace(/ +/g, " ").toLowerCase() === taskText.toLowerCase();
+        return task.querySelector("p").textContent.replace(/ +/g, " ").toLowerCase().trim() === taskText.toLowerCase().trim();
     });
 
     return taskExist;
