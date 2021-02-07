@@ -72,34 +72,23 @@ createNode(sectionInfo, createNode("p", "En esta página podrás realizar un mon
 
 createNode(main, sectionInfo);
 
-var sectionApp = createNode("section");
-// Referencia de estilo base, modificar en main.css
-sectionApp.style.border = "1px solid black";
-sectionApp.style.width = "90%";
-sectionApp.style.display = "flex";
-sectionApp.style.flexDirection = "column";
-sectionApp.style.alignItems = "center";
-sectionApp.style.padding = "10px 0";
+var sectionApp = createNode("article");
 sectionApp.classList.add("appContainer");
 createNode(main, sectionApp);
 
 // Nodo form para añadir las tareas
 var formApp = createNode("form");
-createNode(formApp, createNode("h3", "TODO List"));
 
 var inputForm = createNode("input");
 inputForm.id = "newTask";
 inputForm.type = "text";
 inputForm.placeholder = "Nueva tarea...";
 inputForm.required = "true";
-// Referencia de estilo base, modificar en main.css
-inputForm.style.border = "1px solid black";
 
 var buttonForm = createNode("input");
+buttonForm.classList.add("btn", "btn-success");
 buttonForm.type = "submit";
 buttonForm.value = "Añadir";
-// Referencia de estilo base, modificar en main.css
-buttonForm.style.border = "1px solid black";
 
 createNode(formApp, inputForm);
 createNode(formApp, buttonForm);
@@ -107,49 +96,110 @@ createNode(sectionApp, formApp);
 
 var myList = createNode("ol");
 myList.id = "myList";
-myList.style.marginTop = "10px";
+
+var myTasks = myList.children;
 
 createNode(sectionApp, myList);
 
 formApp.addEventListener("submit", (event) => {
     event.preventDefault();
 
-    createTask(inputForm.value);
+    var newTask = inputForm.value.replace(/ +/g, " ");
+
+    if(newTask) {
+        if(!validateTask(newTask, myTasks)) {
+            createTask(inputForm.value);
+        }
+        else {
+            alert("No se puede agregar una tarea repetida");
+        }
+    }
+    else {
+        alert("No se puede agregar una tarea vacia.");
+    }
 
     event.target.reset();
 })
 
 function createTask(task) {
     var myTask = createNode("li");
+    var taskContainer = createNode("div");
+    taskContainer.classList.add("taskContainer");
 
     var checkBoxTask = createNode("input");
     checkBoxTask.type = "checkbox";
-    checkBoxTask.style.display = "inline";
-    checkBoxTask.style.marginRight = "5px";
 
     checkBoxTask.addEventListener("change", (event) => {
         if(event.target.checked) {
             taskText.style.textDecoration = "line-through";
+            buttonEditTask.style.display = "none";
         }
         else {
             taskText.style.textDecoration = "none";
+            buttonEditTask.style.display = "block";
         }
     })
 
     var taskText = createNode("p", task);
-    taskText.style.display = "inline";
 
+    var taskActions = createNode("div");
+    taskActions.classList.add("actions");
+
+    var buttonEditTask = createNode("button");
+    buttonEditTask.classList.add("btn", "btn-edit");
+    buttonEditTask.textContent = "Editar";
+    buttonEditTask.addEventListener("click", () => {
+        editTask(myTask);
+    });
+    
     var buttonDeleteTask = createNode("button");
+    buttonDeleteTask.classList.add("btn", "btn-delete");
     buttonDeleteTask.textContent = "Eliminar";
-    buttonDeleteTask.style.border = "1px solid black";
-
     buttonDeleteTask.addEventListener("click", () => {
-        myList.removeChild(myTask);
-    })
+        deleteTask(myTask);
+    });
 
-    createNode(myTask, checkBoxTask);
-    createNode(myTask, taskText);
-    createNode(myTask, buttonDeleteTask);
+    createNode(taskActions, buttonEditTask);
+    createNode(taskActions, buttonDeleteTask);
+
+    createNode(taskContainer, checkBoxTask);
+    createNode(taskContainer, taskText);
+    createNode(taskContainer, taskActions);
+    createNode(myTask, taskContainer);
     
     createNode(myList, myTask);
+}
+
+function validateTask(taskText, actualTasks) {
+    var tmpTasks = [...actualTasks];
+    var taskExist = tmpTasks.some(task => {
+        return task.querySelector("p").textContent.replace(/ +/g, " ").toLowerCase() === taskText.toLowerCase();
+    });
+
+    return taskExist;
+}
+
+function deleteTask(task) {
+    var confirmDelete = confirm("¿Esta seguro de eliminar la tarea? /n Esta acción no se puede revertir");
+
+    if(confirmDelete) {
+        myList.removeChild(task);
+    }
+}
+
+function editTask(task) {
+    var textTask = task.querySelector("p");
+    var newTextTask = prompt("Escribe la nueva tarea:", textTask.textContent);
+
+    if(newTextTask) {
+        if(!validateTask(newTextTask, myTasks)) {
+            textTask.textContent = newTextTask;
+        }
+        else {
+            alert("No se puede agregar una tarea repetida");
+        }
+    }
+    else {
+        alert("No se puede agregar una tarea vacia.");
+    }
 }
