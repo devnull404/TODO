@@ -1,10 +1,13 @@
 var countRemovingID = 1
 
-document.getElementById("myapp").innerHTML += '<input id="task" type="text" placeholder="New task" maxlength="30">'
-document.getElementById("myapp").innerHTML += '<button onclick=getTask()>add</button>'
+document.getElementById("myapp").innerHTML += '<input id="task" type="text" placeholder="New task" maxlength="30">';
+document.getElementById("myapp").innerHTML += '<button onclick=getTask()>add</button>';
+
 document.getElementsByTagName("input")[0].addEventListener("keyup", function (e) {
+    console.log("Here")
     if (e.key === "Enter") {
-        document.getElementsByTagName("button")[0].click()
+        document.getElementsByTagName("button")[0].click();
+        console.log("Here")
     }
 });
 
@@ -50,5 +53,6 @@ function test(something) {
 }
 
 function lineT(something) {
+    let taskNode = something.childNodes[1].style.textDecoration
     something.childNodes[1].style.textDecoration === "" ? something.childNodes[1].style.textDecoration = "line-through" : something.childNodes[1].style.textDecoration = ""
 }
