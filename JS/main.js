@@ -1,5 +1,13 @@
 var countRemovingID = 1
 
+document.getElementById("myapp").innerHTML += '<input id="task" type="text" placeholder="New task" maxlength="30">'
+document.getElementById("myapp").innerHTML += '<button onclick=getTask()>add</button>'
+document.getElementsByTagName("input")[0].addEventListener("keyup", function (e) {
+    if (e.key === "Enter") {
+        document.getElementsByTagName("button")[0].click()
+    }
+});
+
 document.addEventListener("mousemove", function(e) {
     drawer(e)
 });
@@ -14,14 +22,6 @@ function drawer(event) {
     document.getElementsByClassName("decorationBar")[1].style.backgroundColor = inProp;
 }
 
-document.getElementById("myapp").innerHTML += '<input id="task" type="text" placeholder="New task">'
-document.getElementById("myapp").innerHTML += '<button onclick=getTask()>add</button>'
-document.getElementsByTagName("input")[0].addEventListener("keyup", function (e) {
-    console.log(e.key)
-    if (e.key === "Enter") {
-        document.getElementsByTagName("button")[0].click()
-    }
-});
 function getTask() {
     let inputNode = document.getElementById("task");
     let taskText = null;
@@ -43,7 +43,8 @@ function createTask(str) {
     taskContainer.className = "taskContainer";
     let checkBox  = document.createElement("input");
     checkBox.type = "checkbox";
-    checkBox.class = "check"
+    checkBox.className = "check"
+    checkBox.onchange = function onchange(event) {lineT(this.parentNode)}
     let textTask = document.createElement("div");
     textTask.innerHTML = str;
     let deleteButton = document.createElement("button")
@@ -59,6 +60,9 @@ function createTask(str) {
 }
 
 function test(something) {
-    console.log(something)
     document.getElementById(something).parentNode.remove()
+}
+
+function lineT(something) {
+    something.childNodes[1].style.textDecoration === "" ? something.childNodes[1].style.textDecoration = "line-through" : something.childNodes[1].style.textDecoration = ""
 }
