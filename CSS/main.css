@@ -103,6 +103,34 @@ main article div#myapp input:focus {
   box-shadow: 0px 5px 5px 0 gray;
 }
 
+.taskContainer {
+  background-color: #65ff93;
+  height: 50px;
+  border-radius: 3px;
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  align-items: center;
+  margin: 5px 0 5px 0;
+  transition: all 0.3s ease;
+}
+
+.taskContainer:hover {
+  box-shadow: 1px 1px 0 2px gray;
+}
+
+.delButton {
+  padding: 10px;
+  border-radius: 10px;
+  background-color: white;
+  transition: all 0.5s ease;
+}
+
+.delButton:hover {
+  background-color: #e7452f;
+  box-shadow: 3px 0px 10px 0 gray;
+}
+
 * {
   border: 0;
   margin: 0px;
