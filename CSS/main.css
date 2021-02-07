@@ -40,7 +40,7 @@ header nav div {
 
 section.infoBubble {
   display: flex;
-  max-width: 60vw;
+  width: 68vw;
   border-radius: 10px;
   padding: 10px;
   background-color: whitesmoke;
