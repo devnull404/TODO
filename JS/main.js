@@ -4,12 +4,12 @@ document.getElementById("myapp").innerHTML += '<input id="task" type="text" plac
 document.getElementById("myapp").innerHTML += '<button onclick=getTask()>add</button>';
 
 document.getElementsByTagName("input")[0].addEventListener("keyup", function (e) {
-    console.log("Here")
     if (e.key === "Enter") {
         document.getElementsByTagName("button")[0].click();
-        console.log("Here")
     }
 });
+
+document.getElementsByTagName("input")[0].value = "hfdsjlkfdskj"
 
 function getTask() {
     let inputNode = document.getElementById("task");
