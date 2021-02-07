@@ -146,6 +146,7 @@ main article div#myapp input:focus {
   margin: 0px;
   border-box: box-sizing;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  outline: none;
 }
 
 /*# sourceMappingURL=main.css.map */
