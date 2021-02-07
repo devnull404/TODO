@@ -4,3 +4,7 @@ Esta aplicación fue desarrollada en javascript, y cumple con los requisitos def
 ## Equipo #2
 - Francisco Mendoza Ruiz
 - Victor Martinez
+- Juan Andres Gonzalez
+- Sebastian García
+
+# ¿Cómo funciona nuestra aplicación?
