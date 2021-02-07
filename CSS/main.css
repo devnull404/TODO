@@ -160,7 +160,6 @@ main article .taskContainer {
 }
 
 .actions {
-  width: 160px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
