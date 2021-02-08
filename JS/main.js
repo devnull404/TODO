@@ -24,10 +24,6 @@ function getTask() {
     }
 }
 
-<<<<<<< HEAD
-document.getElementById("app").innerHTML += '<input type="text" placeholder="New task">'
-document.getElementById("app").innerHTML += '<button>add</button>'
-=======
 function createTask(str) {
     container = document.getElementById("appContainer")
     let taskContainer = document.createElement("div");
@@ -72,4 +68,3 @@ function lineT(something) {
 document.getElementsByClassName("infoBubble")[0].addEventListener("click", function(e) {
     document.getElementsByClassName("infoBubble")[0].remove()
 })
->>>>>>> 4672feddf844ab5f640e293149e34be66d39df2f
