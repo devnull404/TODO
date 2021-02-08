@@ -1,0 +1,113 @@
+header {
+  position: sticky;
+  top: 0;
+  background-color: white;
+  display: flex-box;
+}
+header div.decorationBar {
+  background-color: gray;
+  height: 5px;
+  margin: 5px 0 0 0;
+}
+header nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 50px;
+  padding: 3px 10px 0 10px;
+}
+header nav a {
+  text-decoration: none;
+  padding: 10px;
+  color: black;
+  border: 1px solid black;
+  border-radius: 4px;
+  transition: 0.4s all ease;
+}
+header nav a:hover {
+  background-color: gray;
+  color: white;
+}
+header nav img {
+  height: inherit;
+}
+header nav div {
+  border: 1px dotted gray;
+  padding: 2px;
+  border-radius: 2px;
+  background-color: black;
+}
+
+section.infoBubble {
+  display: flex;
+  max-width: 60vw;
+  border-radius: 10px;
+  padding: 10px;
+  background-color: whitesmoke;
+  flex-direction: column;
+  transition: all 0.6s ease;
+}
+@media (max-width: 500px) {
+  section.infoBubble {
+    max-width: 80vw;
+  }
+}
+
+section.infoBubble:hover {
+  box-shadow: 5px 5px 10px 0 gray;
+}
+
+main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: 10px 0 10px 0;
+}
+
+main article {
+  border: 1px solid #c6d4d4;
+  border-radius: 10px 10px 0 0;
+  margin: 30px 0 0 0;
+  width: 70vw;
+  height: 90vh;
+}
+@media (max-width: 600px) {
+  main article {
+    width: 90vw;
+  }
+}
+main article div#myapp {
+  padding: 10px;
+  display: flex;
+  background-color: whitesmoke;
+  border-radius: 10px 10px 0 0;
+  height: 50px;
+  align-items: center;
+}
+main article div#myapp button {
+  padding: 10px 5px 10px 5px;
+  border-radius: 0 7px 7px 0;
+  background-color: #64c864;
+}
+main article div#myapp input {
+  width: 80%;
+  padding: 10px 5px 10px 5px;
+  border-radius: 7px 0 0 7px;
+  transition: all 0.3s ease;
+}
+main article div#myapp input:hover {
+  box-shadow: 0px 5px 5px 0 gray;
+}
+main article div#myapp input:focus {
+  box-shadow: 0px 5px 5px 0 gray;
+}
+
+* {
+  border: 0;
+  margin: 0px;
+  border-box: box-sizing;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/*# sourceMappingURL=main.css.map */
