@@ -30,6 +30,10 @@ header nav a:hover {
 }
 header nav img {
   height: inherit;
+  transition: all 1s ease-in-out;
+}
+header nav img:hover {
+  transform: rotate(1000deg);
 }
 header nav div {
   border: 1px dotted gray;
@@ -42,7 +46,7 @@ section.infoBubble {
   display: flex;
   width: 68vw;
   border-radius: 10px;
-  padding: 10px;
+  padding: 15px;
   background-color: whitesmoke;
   flex-direction: column;
   transition: all 0.6s ease;
@@ -70,7 +74,7 @@ main article {
   border-radius: 10px 10px 0 0;
   margin: 30px 0 0 0;
   width: 70vw;
-  height: 90vh;
+  height: 87vh;
 }
 @media (max-width: 600px) {
   main article {
@@ -86,13 +90,24 @@ main article div#myapp {
   align-items: center;
 }
 main article div#myapp button {
-  padding: 7px 10px 6px 10px;
+  width: 50px;
+  height: 40px;
+  color: green;
   border-radius: 0 7px 7px 0;
+  background-color: white;
+  transition: all 0.4s ease;
+  border-left: 4px solid whitesmoke;
+}
+main article div#myapp button:hover {
   background-color: #64c864;
+  box-shadow: 0 1px 1px 0 gray;
+  color: white;
 }
 main article div#myapp input {
+  height: 40px;
   width: 80%;
-  padding: 10px 5px 10px 5px;
+  padding: 0 0 0 10px;
+  font-size: 17px;
   border-radius: 7px 0 0 7px;
   transition: all 0.3s ease;
 }
@@ -119,6 +134,12 @@ main article div#myapp input:focus {
   width: 70%;
   text-align: center;
 }
+@media (max-width: 800px) {
+  .taskContainer {
+    height: 90px;
+    border-radius: 10px;
+  }
+}
 
 .taskContainer:hover {
   box-shadow: 1px 0px 0 2px gray;
@@ -143,6 +164,13 @@ main article div#myapp input:focus {
 
 .check {
   font-size: 40px;
+}
+
+.timeInput {
+  background-color: whitesmoke;
+  border-radius: 10px;
+  padding: 3px 15px 3px 15px;
+  box-shadow: 2px 2px 2px 1px gray;
 }
 
 * {

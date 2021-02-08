@@ -1,6 +1,6 @@
 var countRemovingID = 1
 
-document.getElementById("myapp").innerHTML += '<input id="task" type="text" placeholder="New task" maxlength="30">';
+document.getElementById("myapp").innerHTML += '<input id="task" type="text" placeholder="Nueva tarea" maxlength="30">';
 document.getElementById("myapp").innerHTML += '<button onclick=getTask() style="font-size: 20px">+</button>';
 
 document.getElementsByTagName("input")[0].addEventListener("keyup", function (e) {
@@ -19,7 +19,7 @@ function getTask() {
         createTask(taskText);
         document.getElementById("task").style.border = "none"
     } else {
-        inputNode.placeholder = "¡The input cannot be empty!";
+        inputNode.placeholder = "¡No puedes dejar vacío este espacio!";
         document.getElementById("task").style.border = "2px solid red"
     }
 }
@@ -37,20 +37,29 @@ function createTask(str) {
     let deleteButton = document.createElement("button")
     deleteButton.className = "delButton"
     deleteButton.id = "r" + countRemovingID.toString()
-    deleteButton.onclick = function onclick(event) {test(this.id)}
+    deleteButton.onclick = function onclick(event) {deleteTask(this.id)}
     deleteButton.innerHTML = "&times"
     container.appendChild(taskContainer)
     container.childNodes[container.childNodes.length-1].appendChild(checkBox)
     container.childNodes[container.childNodes.length-1].appendChild(textTask)
     container.childNodes[container.childNodes.length-1].appendChild(deleteButton)
+
+    let date  = document.createElement("input");
+    date.type = "time"
+    date.className = "timeInput"
+    container.childNodes[container.childNodes.length-1].appendChild(date)
+
+
+
     countRemovingID += 1
 }
 
-function test(something) {
+function deleteTask(something) {
     document.getElementById(something).parentNode.remove()
 }
 
 function lineT(something) {
-    let taskNode = something.childNodes[1].style.textDecoration
+    let taskNode = something.childNodes[1].style
+    taskNode.color === "" ? taskNode.color = "rgb(50,100,200)" : taskNode.color = ""
     something.childNodes[1].style.textDecoration === "" ? something.childNodes[1].style.textDecoration = "line-through" : something.childNodes[1].style.textDecoration = ""
 }
