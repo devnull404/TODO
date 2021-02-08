@@ -30,10 +30,10 @@ header nav a:hover {
 }
 header nav img {
   height: inherit;
-  transition: all 1s ease-in-out;
+  transition: all 0.6s ease-in-out;
 }
 header nav img:hover {
-  transform: rotate(1000deg);
+  transform: rotate(1000deg) scale(1.4);
 }
 header nav div {
   border: 1px dotted gray;
@@ -171,6 +171,11 @@ main article div#myapp input:focus {
   border-radius: 10px;
   padding: 3px 15px 3px 15px;
   box-shadow: 2px 2px 2px 1px gray;
+  transition: all 0.6s ease;
+}
+
+.timeInput:hover {
+  transform: scale(1.2);
 }
 
 * {
