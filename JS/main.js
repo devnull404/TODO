@@ -60,6 +60,11 @@ function deleteTask(something) {
 
 function lineT(something) {
     let taskNode = something.childNodes[1].style
-    taskNode.color === "" ? taskNode.color = "rgb(50,100,200)" : taskNode.color = ""
+    taskNode.color === "" ? taskNode.color = "red" : taskNode.color = ""
     something.childNodes[1].style.textDecoration === "" ? something.childNodes[1].style.textDecoration = "line-through" : something.childNodes[1].style.textDecoration = ""
 }
+
+
+document.getElementsByClassName("infoBubble")[0].addEventListener("click", function(e) {
+    document.getElementsByClassName("infoBubble")[0].remove()
+})
