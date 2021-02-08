@@ -2,9 +2,9 @@
 
 section.infoBubble
     display: flex
-    max-width: 60vw
+    width: 68vw
     border-radius: 10px
-    padding: 10px
+    padding: 15px
     background-color: whitesmoke
     flex-direction: column
     transition: all 0.6s ease
@@ -27,7 +27,7 @@ main
         border-radius: 10px 10px 0 0
         margin: 30px 0 0 0
         width: 70vw
-        height: 90vh
+        min-height: 87vh
         @media ( max-width: 600px  )
             width: 90vw
         div#myapp
@@ -38,15 +38,71 @@ main
             height: 50px
             align-items: center
             button
-                padding: 10px 5px 10px 5px
+                width: 50px
+                height: 40px
+                color: green
                 border-radius: 0 7px 7px 0
+                background-color: white
+                transition: all 0.4s ease
+                border-left: 4px solid whitesmoke
+            button:hover
                 background-color: rgb(100, 200, 100)
+                box-shadow: 0 1px 1px 0 gray
+                color: white
             input
+                height: 40px
                 width: 80%
-                padding: 10px 5px 10px 5px
+                padding: 0 0 0 10px
+                font-size: 17px
                 border-radius: 7px 0 0 7px
                 transition: all 0.3s ease
             input:hover
                 box-shadow: 0px 5px 5px 0 gray
             input:focus
                 box-shadow: 0px 5px 5px 0 gray
+
+.taskContainer
+    background-color: #65ff93
+    height: 50px
+    border-radius: 3px
+    display: flex
+    flex-wrap: wrap
+    width: 100%
+    justify-content: space-around
+    align-items: center
+    margin: 5px 0 5px 0
+    transition: all 0.3s ease
+    div
+        width: 70%
+        text-align: center
+    @media ( max-width: 800px  )
+        height: 90px
+        border-radius: 10px
+.taskContainer:hover
+    box-shadow: 1px 0px 0 2px gray
+
+.delButton
+    width: 25px
+    height: 25px
+    border-radius: 10px
+    background-color: whitesmoke
+    transition: all 0.3s ease-in-out
+.delButton:hover
+    width: 30px
+    height: 30px
+    border-radius: 15px
+    background-color: #e7452f
+    box-shadow: 3px 0px 10px 0 gray
+    font-size: 15px
+
+.check
+    font-size: 40px
+
+.timeInput
+    background-color: whitesmoke
+    border-radius: 10px
+    padding: 3px 15px 3px 15px
+    box-shadow: 2px 2px 2px 1px gray
+    transition: all 0.6s ease
+.timeInput:hover
+    transform: scale(1.2)
