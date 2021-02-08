@@ -34,6 +34,12 @@ function createTask(str) {
     checkBox.onchange = function onchange(event) {lineT(this.parentNode)}
     let textTask = document.createElement("div");
     textTask.innerHTML = str;
+    let editButton = document.createElement("button");
+    editButton.className = "editButton"
+    editButton.style.display = "block";
+    editButton.id = "e" + countRemovingID.toString()
+    editButton.onclick = function onclick(event) {editTask(this.id)}
+    editButton.innerHTML = "Editar"
     let deleteButton = document.createElement("button")
     deleteButton.className = "delButton"
     deleteButton.id = "r" + countRemovingID.toString()
@@ -42,6 +48,7 @@ function createTask(str) {
     container.appendChild(taskContainer)
     container.childNodes[container.childNodes.length-1].appendChild(checkBox)
     container.childNodes[container.childNodes.length-1].appendChild(textTask)
+    container.childNodes[container.childNodes.length-1].appendChild(editButton)
     container.childNodes[container.childNodes.length-1].appendChild(deleteButton)
 
     let date  = document.createElement("input");
@@ -59,6 +66,13 @@ function deleteTask(something) {
 }
 
 function lineT(something) {
+    let editButton = something.querySelector(".editButton");
+    if(editButton.style.display === "block") {
+        editButton.style.display = "none"
+    }
+    else {
+        editButton.style.display = "block"
+    }
     let taskNode = something.childNodes[1].style
     taskNode.color === "" ? taskNode.color = "red" : taskNode.color = ""
     something.childNodes[1].style.textDecoration === "" ? something.childNodes[1].style.textDecoration = "line-through" : something.childNodes[1].style.textDecoration = ""
@@ -68,3 +82,17 @@ function lineT(something) {
 document.getElementsByClassName("infoBubble")[0].addEventListener("click", function(e) {
     document.getElementsByClassName("infoBubble")[0].remove()
 })
+
+function editTask(idTask) {
+    task = document.getElementById(idTask).parentNode;
+    var textTask = task.querySelector("div");
+
+    var newTextTask = prompt("Escribe la nueva tarea:", textTask.textContent);
+
+    if(newTextTask) {
+        textTask.textContent = newTextTask;
+    }
+    else {
+        alert("No se puede agregar una tarea vacia.");
+    }
+}
