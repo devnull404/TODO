@@ -1,4 +1,5 @@
 var countRemovingID = 1
+var time = new Date();
 
 document.getElementById("myapp").innerHTML += '<input id="task" type="text" placeholder="Nueva tarea" maxlength="30">';
 document.getElementById("myapp").innerHTML += '<button onclick=getTask() style="font-size: 20px">+</button>';
@@ -31,7 +32,7 @@ function createTask(str) {
     let checkBox  = document.createElement("input");
     checkBox.type = "checkbox";
     checkBox.className = "check"
-    checkBox.onchange = function onchange(event) {lineT(this.parentNode)}
+    checkBox.onchange = function onchange(event) {lineT(event, this.parentNode)}
     let textTask = document.createElement("div");
     textTask.innerHTML = str;
     let editButton = document.createElement("button");
@@ -51,9 +52,12 @@ function createTask(str) {
     container.childNodes[container.childNodes.length-1].appendChild(editButton)
     container.childNodes[container.childNodes.length-1].appendChild(deleteButton)
 
+    time = new Date();
     let date  = document.createElement("input");
+    date.dataset.startTime = time.getHours() + ":" + time.getMinutes();
     date.type = "time"
     date.className = "timeInput"
+    date.value = time.getHours() + ":" + time.getMinutes();
     container.childNodes[container.childNodes.length-1].appendChild(date)
 
 
@@ -65,17 +69,15 @@ function deleteTask(something) {
     document.getElementById(something).parentNode.remove()
 }
 
-function lineT(something) {
-    let editButton = something.querySelector(".editButton");
-    if(editButton.style.display === "block") {
-        editButton.style.display = "none"
-    }
-    else {
-        editButton.style.display = "block"
-    }
-    let taskNode = something.childNodes[1].style
-    taskNode.color === "" ? taskNode.color = "red" : taskNode.color = ""
-    something.childNodes[1].style.textDecoration === "" ? something.childNodes[1].style.textDecoration = "line-through" : something.childNodes[1].style.textDecoration = ""
+function lineT(event, something) {
+    something.querySelector(".editButton").style.display = something.querySelector(".editButton").style.display === "block" ? "none" : "block";
+    let taskNode = something.childNodes[1]
+    let timeTask = something.querySelector("input[type=time]");
+    time = new Date();
+    timeTask.value = event.target.checked ? time.getHours() + ":" + time.getMinutes() : timeTask.dataset.startTime;
+    taskNode.textContent = event.target.checked ? taskNode.textContent += " (Finalized)" : taskNode.textContent.replace(" (Finalized)", "");
+    taskNode.style.color === "" ? taskNode.style.color = "red" : taskNode.style.color = ""
+    taskNode.style.textDecoration === "" ? taskNode.style.textDecoration = "line-through" : taskNode.style.textDecoration = ""
 }
 
 
