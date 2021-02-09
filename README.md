@@ -12,19 +12,6 @@ Para ilustrar de una manera más consisa nuesta lógica, decidimos ilustrarla pa
 - deleteTask
 - lineT
 
-Basándonos en la estructura de árbol de una página HTML, que podemos encontrar en el siguiente diagrama, es posible dividir nuestra aplicación en dos entidades, el header o el final del elemento *body* desde el linkeamos nuestros archivos javascript que contienen las funciones anteriormente mencionadas.
-
-![alt text](https://github.com/devnull404/TODO/blob/develop/assets/doc/BEDU1.png)
-
-Entonces, agregando JS al HTML, podemos encontrar funciones que crean los elementos necesarios, así como algunos *event listeners* que se encargan de llamar a ciertas funciones en caso de que se presente un estado determinado. 
-
-![alt text](https://github.com/devnull404/TODO/blob/develop/assets/doc/BEDU2.png)
-
-## Estructura de trabajo en equipo remoto
-En el diagrama que se presenta a continuación, podemos observar que nos basamos en un repositorio principal, y entonces el resto del equipo hizo un fork de este para así clonar en sus equipos localmente; una vez terminada su parte del proyecto, lo único que hicieron fue un *pull request* que alguien del equipo se encarga de revisar y aceptar para porder hacer merge en la rama develop, uniendo los cambios de cada uno de los integrantes del equipo.
-
-![alt text](https://github.com/devnull404/TODO/blob/develop/assets/doc/GITHUBBEDU.png)
-
 El contenido de estas, es el siguiente:
 
 ``` javascript
@@ -90,6 +77,18 @@ function lineT(something) {
 }
 ```
 
+Basándonos en la estructura de árbol de una página HTML, que podemos encontrar en el siguiente diagrama, es posible dividir nuestra aplicación en dos entidades, el header o el final del elemento *body* desde el linkeamos nuestros archivos javascript que contienen las funciones anteriormente mencionadas.
+
+![alt text](https://github.com/devnull404/TODO/blob/develop/assets/doc/BEDU1.png)
+
+Entonces, agregando JS al HTML, podemos encontrar funciones que crean los elementos necesarios, así como algunos *event listeners* que se encargan de llamar a ciertas funciones en caso de que se presente un estado determinado. 
+
+![alt text](https://github.com/devnull404/TODO/blob/develop/assets/doc/BEDU2.png)
+
+## Estructura de trabajo en equipo remoto
+En el diagrama que se presenta a continuación, podemos observar que nos basamos en un repositorio principal, y entonces el resto del equipo hizo un fork de este para así clonar en sus equipos localmente; una vez terminada su parte del proyecto, lo único que hicieron fue un *pull request* que alguien del equipo se encarga de revisar y aceptar para porder hacer merge en la rama develop, uniendo los cambios de cada uno de los integrantes del equipo.
+
+![alt text](https://github.com/devnull404/TODO/blob/develop/assets/doc/GITHUBBEDU.png)
 
 
 ## Conclusiones
