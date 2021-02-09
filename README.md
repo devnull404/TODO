@@ -107,4 +107,4 @@ En el diagrama que se presenta a continuación, podemos observar que nos basamos
 
  - Francisco:
 
- dksajd
+Todo lo que realizamos guardó relación con lo aprendido durante los módulos anteriores, y encontramos una manera flexible para trabajar colaborativamente en remoto, además de que aprendimos muchas cosas necesarias para trabajar con javascript, de las que no éramos conscientes. 
