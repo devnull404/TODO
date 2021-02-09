@@ -79,3 +79,23 @@ function lineT(something) {
     something.childNodes[1].style.textDecoration === "" ? something.childNodes[1].style.textDecoration = "line-through" : something.childNodes[1].style.textDecoration = ""
 }
 ```
+
+
+
+## CONCLUCIONES
+
+- Sebastian:
+
+ Un problema que tuve en este examen fue entender cómo se comportaba la implementación de las funciones que se asignan a los eventos. Específicamente cuando utilizas funciones para crear nuevos elementos y esos elementos tienen eventos con más funciones. Por lo que me di cuenta que tener una buena planeación es importante para obtener el resultado deseado.
+
+ - Juan Carlos:
+
+ Para desarrollar este proyecto el principal problema fue el uso de GitHub para unir los repositorios con pull request ya que habían conflictos y no sabía como resolverlos al inicio, pero en lo demás solo era cuestión de investigar y no fue tan complicado y me sirvió mucho el proyecto para entender mas sobre los eventos y los nodos de los cuales no tenía mucho conocimiento.
+
+ - Victor:
+
+ En el desarrollo de este proyecto, para mi los que más  se me dificultó fue hacer, crear los nodos y darle los estilos. Creo que las funciones las llevamos a cabo muy bien ya que fueron de los temas que más entendi. Me pareció un gran proyecto para fortalecer todo lo que hemos aprendido a lo largo de estas 8  sesiones
+
+ - Francisco:
+
+ dksajd
