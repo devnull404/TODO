@@ -1,7 +1,7 @@
 ## 2Do App
 Esta aplicación fue desarrollada en javascript, y cumple con los requisitos definidos en el proyecto BEDU Santander.
 
-![alt text](https://github.com/devnull404/TODO/blob/develop/assets/doc/PORTADABEDU.SVG)
+![alt text](https://github.com/devnull404/TODO/blob/develop/assets/doc/PORTADABEDU.svg)
 
 ## Equipo No. 2
 - Francisco Mendoza Ruiz
